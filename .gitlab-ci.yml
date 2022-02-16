@@ -1,0 +1,9 @@
+stages:
+  - build
+
+docker_build:
+  stage: build
+  script:
+    - docker login registry.gitlab.com -u ${CI_USERNAME} -p ${CI_TOKEN}
+    - docker build -t registry.gitlab.com/tcam-engineering/platform/ci-go-image:1.18beta2 .
+    - docker push registry.gitlab.com/tcam-engineering/platform/ci-go-image:1.18beta2
