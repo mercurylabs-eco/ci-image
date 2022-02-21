@@ -1,6 +1,6 @@
 FROM golang:1.18beta2
 
-RUN apt-get update && apt install unzip
+RUN apt-get update && apt install unzip openjdk-11-jre-headless -y
 
 WORKDIR /tmp
 
