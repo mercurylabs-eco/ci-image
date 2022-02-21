@@ -18,6 +18,9 @@ docker_build:
 test_image:
   image: registry.gitlab.com/tcam-engineering/platform/ci-go-image:1.18beta2
   stage: test
+  rules:
+    - changes:
+        - Dockerfile
   script:
     - sam --version
     - aws --version
