@@ -1,4 +1,6 @@
-FROM golang:1.18beta2
+ARG GOLANG_TAG=1.18beta2
+
+FROM golang:${GOLANG_TAG}
 
 RUN apt-get update && apt install unzip openjdk-11-jre-headless -y
 
