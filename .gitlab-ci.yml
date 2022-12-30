@@ -12,14 +12,14 @@ docker_build:
         - Dockerfile
   variables:
     GOLANG_TAG: 1.18beta2
-    CI_IMAGE_TAG: 20221229
+    CI_IMAGE_TAG: 20221230
   script:
     - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
     - docker build --build-arg GOLANG_TAG=${GOLANG_TAG} -t registry.gitlab.com/tcam-engineering/platform/ci-go-image:${CI_IMAGE_TAG} .
     - docker push registry.gitlab.com/tcam-engineering/platform/ci-go-image:${CI_IMAGE_TAG}
 
 test_image:
-  image: registry.gitlab.com/tcam-engineering/platform/ci-go-image:20221229
+  image: registry.gitlab.com/tcam-engineering/platform/ci-go-image:20221230
   stage: test
   rules:
     - changes:
