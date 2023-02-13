@@ -20,6 +20,6 @@ RUN curl -o zig.tar.xz https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.16
     && mkdir /usr/local/zig && tar xf zig.tar.xz -C /usr/local/zig --strip-components=1 \
     && ln /usr/local/zig/zig /usr/bin/
 
-ENV PATH=$PATH:/usr/local/zig
+ENV PATH=$PATH:/usr/local/zig/zig
 
 RUN rm -rf /tmp/*

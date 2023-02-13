@@ -15,6 +15,7 @@ docker_build:
     CI_IMAGE_TAG: 20230213
   script:
     - docker login registry.gitlab.com -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
+    - docker pull registry.gitlab.com/tcam-engineering/platform/ci-go-image:${CI_IMAGE_TAG}
     - docker build --build-arg GOLANG_TAG=${GOLANG_TAG} -t registry.gitlab.com/tcam-engineering/platform/ci-go-image:${CI_IMAGE_TAG} .
     - docker push registry.gitlab.com/tcam-engineering/platform/ci-go-image:${CI_IMAGE_TAG}
 
@@ -31,3 +32,4 @@ test_image:
     - java --version
     - golangci-lint -h
     - zig version
+    - echo $PATH
