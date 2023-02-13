@@ -17,7 +17,9 @@ RUN go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.44.2
 
 # Install Zig
 RUN curl -o zig.tar.xz https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.1606+3c2a43fdc.tar.xz \
-    && mkdir ~/zig && tar xf zig.tar.xz -C ~/zig --strip-components=1 \
-    && ln ~/zig/zig /usr/bin/
+    && mkdir /usr/local/zig && tar xf zig.tar.xz -C /usr/local/zig --strip-components=1 \
+    && ln /usr/local/zig/zig /usr/bin/
+
+ENV PATH=$PATH:/usr/local/zig
 
 RUN rm -rf /tmp/*
