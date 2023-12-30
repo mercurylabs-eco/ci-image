@@ -5,7 +5,7 @@ on:
       branches: [ main ]
 env:
     REGISTRY: ghcr.io
-    IMAGE_NAME: mercury-be-ci-image
+    IMAGE_NAME: ${{ github.repository }}
 
 jobs:
     push_to_registries:
