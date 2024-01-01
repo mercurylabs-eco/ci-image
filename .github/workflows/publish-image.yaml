@@ -1,5 +1,5 @@
 name: Create and publish a Docker image
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }}  🚀 CI image building/publishing
 on:
     push:
       branches: [ main ]
