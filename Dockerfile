@@ -31,3 +31,6 @@ RUN curl -o zig.tar.xz https://ziglang.org/builds/zig-linux-x86_64-0.11.0-dev.16
 ENV PATH=$PATH:/usr/bin/zig
 
 RUN rm -rf /tmp/*
+
+ENTRYPOINT ["git", "config"]
+CMD ["--global", "--add safe.directory /__w/mercury-backend/mercury-backend"]
